@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <center>
+	    <h1>
+            API de Modelo Regresión Lineal
+        </h1>
+        <h2>
+            MotorAlpes
+        </h2>
+    </center>
+    <center>
+        <p>
+            *CONTEXTO*
+        </p>
+    </center>
+</head>
+<body>
+    <h2>Cargar Archivo</h2>
+    <div>
+        <form method="post" action="/predict" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <button type="submit">Cargar</button>
+            <br><br>
+                <ul>
+                    {% for value in predictions %}
+                        <li>Fila: {{ value }} - Valor Predecido: {{ predictions[value] }}</li>
+                    {% endfor %}
+                </ul>
+        </form>
+    </div>
+</body>
+</html>
